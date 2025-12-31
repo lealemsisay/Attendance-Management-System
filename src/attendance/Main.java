@@ -15,7 +15,7 @@ public class Main extends Application {
     private static Stage primaryStage;
     private static User currentUser; 
 
-    @Override
+    @Override    
     public void start(Stage primaryStage) {
         Main.primaryStage = primaryStage;
 

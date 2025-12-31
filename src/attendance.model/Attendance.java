@@ -8,7 +8,7 @@ public class Attendance {
     private LocalDate date;
     private String status;
     private String remarks;
-    
+
     public Attendance() {}
     
     public Attendance(int studentId, LocalDate date, String status) {
