@@ -1,4 +1,4 @@
-package attendance;
+package src.attendance;
 
 public class ResourceTest {
     public static void main(String[] args) {

@@ -1,15 +1,14 @@
-package attendance;
+package src.attendance;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import attendance.controller.MainController;
-import attendance.model.User;
-import attendance.service.DatabaseService;
-import attendance.service.DatabaseUpdateService; // Add this import
+import src.attendance.controller.MainController;
+import src.attendance.model.User;
+import src.attendance.service.DatabaseService;
+import src.attendance.service.DatabaseUpdateService;
 
 public class Main extends Application {
     
