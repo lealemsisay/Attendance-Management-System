@@ -13,12 +13,12 @@ import src.attendance.service.DatabaseUpdateService;
 public class Main extends Application {
     
     private static Stage primaryStage;
-    private static User currentUser;
-    
+    private static User currentUser; 
+
     @Override
     public void start(Stage primaryStage) {
         Main.primaryStage = primaryStage;
-        
+
         try {
             System.out.println("🚀 Starting application with MySQL...");
             
