@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="attendance.controller.TeacherMainController"
+             stylesheets="@/attendance/style/dashboard.css">
+
+    <top>
+        <HBox styleClass="top-nav-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            
+            <Button onAction="#toggleSidebar" styleClass="menu-button">
+                <graphic>
+                    <Label text="☰" styleClass="menu-icon"/>
+                </graphic>
+            </Button>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <VBox alignment="CENTER_LEFT">
+                <Label text="Teacher Portal" styleClass="app-title"/>
+                <Label text="Attendance Management System" styleClass="app-subtitle"/>
+            </VBox>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Label text="👤" styleClass="user-icon"/>
+                <VBox alignment="CENTER_LEFT">
+                    <Label fx:id="userNameLabel" styleClass="user-name"/>
+                    <Label text="Teacher" styleClass="user-role"/>
+                </VBox>
+                <Button onAction="#logout" text="Logout" styleClass="logout-button"/>
+            </HBox>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox fx:id="sidebar" styleClass="sidebar" spacing="5">
+            <padding><Insets top="20" right="15" bottom="20" left="15"/></padding>
+            
+            <Button onAction="#loadHome" text="🏠 Dashboard" styleClass="sidebar-button"/>
+            <Separator styleClass="sidebar-separator"/>
+            <Button onAction="#showTakeAttendance" text="📝 Take Attendance" styleClass="sidebar-button"/>
+            <Button onAction="#showViewAttendance" text="👀 View Attendance" styleClass="sidebar-button"/>
+            <Button onAction="#showAssignedClasses" text="📚 Assigned Classes" styleClass="sidebar-button"/>
+            <Separator styleClass="sidebar-separator"/>
+            <Button onAction="#showStudentRecords" text="👨‍🎓 Student Records" styleClass="sidebar-button"/>
+            <Button onAction="#showGenerateReports" text="📊 Generate Reports" styleClass="sidebar-button"/>
+            
+            <Region VBox.vgrow="ALWAYS"/>
+            
+            <Separator styleClass="sidebar-separator"/>
+            <VBox styleClass="sidebar-footer" spacing="5">
+                <Label text="Need Help?" styleClass="help-title"/>
+                <Button text="❓ Help Center" styleClass="sidebar-button" style="-fx-text-fill: #6b7280;"/>
+                <Button text="⚙️ Settings" styleClass="sidebar-button" style="-fx-text-fill: #6b7280;"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area"/>
+    </center>
+
+</BorderPane>

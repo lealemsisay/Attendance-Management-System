@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="attendance.controller.AssignedClassesController"
+      spacing="20" 
+      style="-fx-padding: 20;">
+    
+    <!-- Header -->
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Label text="📚 My Assigned Classes" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        
+        <!-- Refresh Button -->
+        <Button text="🔄 Refresh" onAction="#handleRefresh" 
+                style="-fx-background-color: #6c757d; -fx-text-fill: white;"/>
+    </HBox>
+    
+    <!-- Classes Table -->
+    <TableView fx:id="classesTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="Class Name" fx:id="classNameColumn" prefWidth="200"/>
+            <TableColumn text="Room" fx:id="roomColumn" prefWidth="100"/>
+            <TableColumn text="Schedule" fx:id="scheduleColumn" prefWidth="250"/>
+            <TableColumn text="Students" fx:id="studentCountColumn" prefWidth="100"/>
+        </columns>
+    </TableView>
+    
+    <!-- Action Buttons -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="👥 View Students" onAction="#handleViewStudents" 
+                style="-fx-background-color: #2196F3; -fx-text-fill: white;" prefWidth="150"/>
+        <Button text="📝 Take Attendance" onAction="#handleTakeAttendance" 
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white;" prefWidth="150"/>
+        <Button text="📊 View Attendance" onAction="#handleViewAttendance" 
+                style="-fx-background-color: #FF9800; -fx-text-fill: white;" prefWidth="150"/>
+    </HBox>
+    
+    <!-- Statistics -->
+    <HBox spacing="40" alignment="CENTER">
+        <VBox spacing="5" alignment="CENTER">
+            <Label text="Total Classes" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+            <Label fx:id="totalClassesLabel" text="0" 
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2196F3;"/>
+        </VBox>
+        <Separator orientation="VERTICAL" prefHeight="40"/>
+        <VBox spacing="5" alignment="CENTER">
+            <Label text="Total Students" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+            <Label fx:id="totalStudentsLabel" text="0" 
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #4CAF50;"/>
+        </VBox>
+    </HBox>
+    
+</VBox>

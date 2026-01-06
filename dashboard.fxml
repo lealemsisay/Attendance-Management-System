@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      spacing="20"
+      styleClass="dashboard-container">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="Dashboard Overview" styleClass="section-title"/>
+    
+    <HBox spacing="20" styleClass="stats-container">
+        <VBox styleClass="stat-card" spacing="10">
+            <Label text="Total Students" styleClass="stat-title"/>
+            <Label text="245" styleClass="stat-value"/>
+            <Label text="↗ 12% from last month" styleClass="stat-change"/>
+        </VBox>
+        
+        <VBox styleClass="stat-card" spacing="10">
+            <Label text="Present Today" styleClass="stat-title"/>
+            <Label text="89%" styleClass="stat-value"/>
+            <Label text="↑ 5% from yesterday" styleClass="stat-change"/>
+        </VBox>
+        
+        <VBox styleClass="stat-card" spacing="10">
+            <Label text="Active Teachers" styleClass="stat-title"/>
+            <Label text="15" styleClass="stat-value"/>
+            <Label text="No change" styleClass="stat-change"/>
+        </VBox>
+    </HBox>
+    
+    <VBox spacing="15" styleClass="recent-activity">
+        <Label text="Recent Activity" styleClass="section-title"/>
+        <VBox styleClass="activity-list" spacing="10">
+            <HBox spacing="10" styleClass="activity-item">
+                <Label text="•" styleClass="activity-bullet"/>
+                <Label text="John Doe marked present for Math class" styleClass="activity-text"/>
+                <Label text="2 hours ago" styleClass="activity-time"/>
+            </HBox>
+            <HBox spacing="10" styleClass="activity-item">
+                <Label text="•" styleClass="activity-bullet"/>
+                <Label text="New student Sarah Smith registered" styleClass="activity-text"/>
+                <Label text="4 hours ago" styleClass="activity-time"/>
+            </HBox>
+            <HBox spacing="10" styleClass="activity-item">
+                <Label text="•" styleClass="activity-bullet"/>
+                <Label text="Monthly attendance report generated" styleClass="activity-text"/>
+                <Label text="1 day ago" styleClass="activity-time"/>
+            </HBox>
+        </VBox>
+    </VBox>
+
+</VBox>

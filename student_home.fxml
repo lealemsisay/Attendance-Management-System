@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="attendance.controller.StudentDashboardController"
+      spacing="20"
+      styleClass="dashboard-container">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label fx:id="welcomeLabel" text="Student Dashboard" styleClass="section-title"/>
+    
+    <HBox spacing="20" styleClass="stats-container">
+        <VBox styleClass="stat-card" spacing="10">
+            <Label text="Total Classes" styleClass="stat-title"/>
+            <Label fx:id="totalClassesLabel" text="0" styleClass="stat-value"/>
+            <Label fx:id="attendancePercentageLabel" text="Percentage: 0%" styleClass="stat-change"/>
+        </VBox>
+        
+        <VBox styleClass="stat-card" spacing="10">
+            <Label text="Present" styleClass="stat-title"/>
+            <Label fx:id="presentCountLabel" text="0" styleClass="stat-value"/>
+            <Label text="Attendance Records" styleClass="stat-change"/>
+        </VBox>
+        
+        <VBox styleClass="stat-card" spacing="10">
+            <Label text="Messages" styleClass="stat-title"/>
+            <Label fx:id="totalMessagesLabel" text="0" styleClass="stat-value"/>
+            <Label fx:id="unreadMessagesLabel" text="Unread: 0" styleClass="stat-change"/>
+        </VBox>
+    </HBox>
+    
+    <VBox spacing="15" styleClass="recent-activity">
+        <Label text="Quick Actions" styleClass="section-title"/>
+        <HBox spacing="15" alignment="CENTER">
+            <Button text="View My Attendance" onAction="#handleViewAttendance" styleClass="primary-button"/>
+            <!-- FIXED: Remove onAction or change to an existing method -->
+            <Button text="Check Messages" onAction="#handleViewAttendance" styleClass="primary-button"/>
+        </HBox>
+    </VBox>
+
+</VBox>

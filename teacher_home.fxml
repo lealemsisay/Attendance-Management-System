@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="attendance.controller.TeacherDashboardController"
+      spacing="20"
+      styleClass="dashboard-container"
+       stylesheets="@/attendance/style/dashboard.css">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <!-- Welcome Section -->
+    <VBox spacing="10" styleClass="welcome-section">
+        <Label text="Welcome back," styleClass="welcome-text"/>
+        <Label fx:id="teacherNameLabel" styleClass="teacher-name"/>
+        <Label text="Here's an overview of your teaching activities" styleClass="welcome-subtitle"/>
+    </VBox>
+    
+    <!-- Quick Stats -->
+    <HBox spacing="20" styleClass="stats-container">
+        <VBox styleClass="stat-card" spacing="10">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="📚" styleClass="stat-icon"/>
+                <VBox spacing="2">
+                    <Label text="Assigned Classes" styleClass="stat-title"/>
+                    <Label fx:id="classesCountLabel" text="0" styleClass="stat-value"/>
+                </VBox>
+            </HBox>
+            <Label text="Active this semester" styleClass="stat-change"/>
+        </VBox>
+        
+        <VBox styleClass="stat-card" spacing="10">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="👨‍🎓" styleClass="stat-icon"/>
+                <VBox spacing="2">
+                    <Label text="Total Students" styleClass="stat-title"/>
+                    <Label fx:id="studentsCountLabel" text="0" styleClass="stat-value"/>
+                </VBox>
+            </HBox>
+            <Label text="Across all classes" styleClass="stat-change"/>
+        </VBox>
+        
+        <VBox styleClass="stat-card" spacing="10">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="📊" styleClass="stat-icon"/>
+                <VBox spacing="2">
+                    <Label text="Attendance Rate" styleClass="stat-title"/>
+                    <Label fx:id="attendanceRateLabel" text="0%" styleClass="stat-value"/>
+                </VBox>
+            </HBox>
+            <Label text="This week" styleClass="stat-change"/>
+        </VBox>
+    </HBox>
+    
+    <!-- Two Column Layout -->
+    <HBox spacing="20" styleClass="two-column-layout">
+        <!-- Today's Schedule -->
+        <VBox spacing="15" styleClass="schedule-container" HBox.hgrow="ALWAYS">
+            <HBox>
+                <Label text="📅 Today's Schedule" styleClass="section-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="View Full Schedule" styleClass="text-button"/>
+            </HBox>
+            
+            <VBox styleClass="schedule-list" spacing="10">
+                <!-- You'll populate this dynamically -->
+            </VBox>
+        </VBox>
+        
+        <!-- Quick Actions -->
+        <VBox spacing="15" styleClass="actions-container" HBox.hgrow="ALWAYS">
+            <Label text="⚡ Quick Actions" styleClass="section-title"/>
+            
+            <VBox styleClass="actions-list" spacing="10">
+                <Button text="📝 Take Attendance" onAction="#handleTakeAttendance" styleClass="action-button"/>
+                <Button text="👀 View Today's Attendance" onAction="#handleViewAttendance" styleClass="action-button"/>
+                <Button text="📚 View Assigned Classes" onAction="#handleAssignedClasses" styleClass="action-button"/>
+                <Button text="📊 Generate Report" onAction="#handleGenerateReports" styleClass="action-button"/>
+                <Button text="👨‍🎓 Student Records" onAction="#handleStudentRecords" styleClass="action-button"/>
+            </VBox>
+        </VBox>
+    </HBox>
+    
+    <!-- Recent Activity -->
+    <VBox spacing="15" styleClass="activity-container">
+        <HBox>
+            <Label text="📝 Recent Activity" styleClass="section-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="View All Activity" styleClass="text-button"/>
+        </HBox>
+        
+        <VBox styleClass="activity-list" spacing="10">
+            <!-- You'll populate this dynamically -->
+        </VBox>
+    </VBox>
+
+</VBox>

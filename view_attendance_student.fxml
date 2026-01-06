@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="attendance.controller.StudentAttendanceController"
+      stylesheets="@/attendance/style/student_dashboard.css"
+      spacing="20"
+      styleClass="content-container">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <!-- Student Profile Header -->
+    <HBox spacing="20" alignment="CENTER_LEFT">
+        <VBox spacing="5">
+            <Label text="📊 My Attendance Records" styleClass="student-section-title"/>
+            <Label fx:id="studentNameLabel" text="Student Name" styleClass="profile-detail"/>
+            <HBox spacing="10">
+                <Label fx:id="studentIdLabel" text="ID: " styleClass="profile-detail"/>
+                <Label fx:id="studentClassLabel" text="Class: " styleClass="profile-detail"/>
+            </HBox>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Refresh" onAction="#handleRefresh" styleClass="secondary-button"/>
+    </HBox>
+    
+    <!-- Attendance Statistics -->
+    <HBox spacing="20" styleClass="attendance-stats">
+        <VBox styleClass="stat-card-green" spacing="10" alignment="CENTER" prefWidth="150">
+            <Label fx:id="presentCountLabel" text="0" styleClass="stat-value"/>
+            <Label text="Days Present" styleClass="stat-label"/>
+        </VBox>
+        
+        <VBox styleClass="stat-card-red" spacing="10" alignment="CENTER" prefWidth="150">
+            <Label fx:id="absentCountLabel" text="0" styleClass="stat-value"/>
+            <Label text="Days Absent" styleClass="stat-label"/>
+        </VBox>
+        
+        <VBox styleClass="stat-card-orange" spacing="10" alignment="CENTER" prefWidth="150">
+            <Label fx:id="lateCountLabel" text="0" styleClass="stat-value"/>
+            <Label text="Days Late" styleClass="stat-label"/>
+        </VBox>
+        
+        <VBox styleClass="stat-card-blue" spacing="10" alignment="CENTER" prefWidth="150">
+            <Label fx:id="attendanceRateLabel" text="0%" styleClass="stat-value"/>
+            <Label text="Overall Rate" styleClass="stat-label"/>
+        </VBox>
+    </HBox>
+    
+    <!-- Filters -->
+    <HBox spacing="15" alignment="CENTER_LEFT" styleClass="form-container">
+        <Label text="Filter by Month:" styleClass="form-label"/>
+        <ComboBox fx:id="monthFilterCombo" promptText="All Months" styleClass="combo-box" prefWidth="150"/>
+        <Label text="Status:" styleClass="form-label"/>
+        <ComboBox fx:id="statusFilterCombo" promptText="All Status" styleClass="combo-box" prefWidth="120"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Export My Records" onAction="#handleExport" styleClass="primary-button"/>
+    </HBox>
+    
+    <!-- Attendance Table -->
+    <VBox spacing="10" VBox.vgrow="ALWAYS">
+        <Label text="My Attendance History" styleClass="section-title"/>
+        <TableView fx:id="attendanceTable" styleClass="data-table" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="dateColumn" text="Date" prefWidth="120"/>
+                <TableColumn fx:id="dayColumn" text="Day" prefWidth="80"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                <TableColumn fx:id="checkInColumn" text="Check In" prefWidth="100"/>
+                <TableColumn fx:id="checkOutColumn" text="Check Out" prefWidth="100"/>
+                <TableColumn fx:id="remarksColumn" text="Remarks" prefWidth="200"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </VBox>
+    
+    <!-- Summary -->
+    <HBox spacing="20" styleClass="info-card">
+        <VBox spacing="5">
+            <Label text="📈 Attendance Summary" styleClass="card-title"/>
+            <Label fx:id="summaryLabel" text="Loading summary..." styleClass="card-subtitle"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Request Leave" onAction="#handleRequestLeave" styleClass="secondary-button"/>
+        <Button text="View Analytics" onAction="#handleViewAnalytics" styleClass="primary-button"/>
+    </HBox>
+
+</VBox>

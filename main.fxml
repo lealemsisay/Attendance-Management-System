@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="0" styleClass="main-root" stylesheets="@/attendance/style/main.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.controller.MainController">
+    
+    <!-- TOP NAVIGATION BAR -->
+    <HBox prefHeight="60" styleClass="top-nav-bar">
+        <padding><Insets bottom="0" left="24" right="24" top="0" /></padding>
+        
+        <!-- Left side: Menu toggle and app title -->
+        <HBox alignment="CENTER_LEFT" spacing="16">
+            <!-- Menu Toggle Button -->
+            <Button fx:id="menuToggleButton" onAction="#toggleSidebar" styleClass="menu-toggle-btn">
+                <graphic>
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="☰" />
+                </graphic>
+            </Button>
+            
+            <!-- App Title -->
+            <Label styleClass="app-title" text="🏫 Attendance System" />
+        </HBox>
+        
+        <Region HBox.hgrow="ALWAYS" />
+        
+        <!-- Right side: User info and logout -->
+        <HBox alignment="CENTER_RIGHT" spacing="16">
+            <MenuButton fx:id="userMenu" styleClass="user-menu-btn" text="👤 Admin">
+                <items>
+                    <MenuItem onAction="#showProfile" text="👤 Profile" />
+                    <MenuItem onAction="#showSettings" text="⚙️ Settings" />
+                    <SeparatorMenuItem />
+                    <MenuItem onAction="#handleLogout" text="🚪 Logout" />
+                </items>
+            </MenuButton>
+        </HBox>
+    </HBox>
+    
+    <!-- MAIN CONTENT AREA -->
+    <HBox VBox.vgrow="ALWAYS">
+        
+        <!-- SIDEBAR (Left navigation) -->
+        <VBox fx:id="sidebar" minWidth="260" prefWidth="260" styleClass="sidebar">
+            <padding><Insets bottom="24" left="16" right="16" top="24" /></padding>
+            
+            <!-- User Profile Section -->
+            <VBox spacing="12" styleClass="user-profile-section">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <!-- User Avatar -->
+                    <VBox alignment="CENTER" styleClass="user-avatar-container">
+                        <Label styleClass="user-avatar" text="👤" />
+                    </VBox>
+                    
+                    <!-- User Info -->
+                    <VBox spacing="4">
+                        <Label fx:id="sidebarUserName" styleClass="user-name" text="Administrator" />
+                        <Label fx:id="sidebarUserRole" styleClass="user-role" text="Admin" />
+                    </VBox>
+                </HBox>
+            </VBox>
+            
+            <Separator styleClass="sidebar-separator" />
+            
+            <!-- Navigation Menu -->
+            <VBox spacing="8" styleClass="nav-menu">
+                <Button fx:id="dashboardBtn" prefHeight="44" styleClass="nav-button" text="Dashboard" />
+                <Button fx:id="studentsBtn" prefHeight="44" styleClass="nav-button" text="Manage Students" />
+                <Button fx:id="classesBtn" prefHeight="44" styleClass="nav-button" text="Manage Classes" />
+                <Button fx:id="teachersBtn" prefHeight="44" styleClass="nav-button" text="Manage Teachers" />
+                <Button fx:id="assignedClassesBtn" prefHeight="44" styleClass="nav-button" text="My Classes" visible="false" managed="false" />
+                <Button fx:id="reportsBtn" prefHeight="44" styleClass="nav-button" text="Reports" />
+            </VBox>
+            
+            <Region VBox.vgrow="ALWAYS" />
+        </VBox>
+        
+        <!-- MAIN CONTENT AREA -->
+        <StackPane fx:id="contentArea" styleClass="content-area" HBox.hgrow="ALWAYS">
+            <!-- Content will be loaded here -->
+        </StackPane>
+    </HBox>
+</VBox>

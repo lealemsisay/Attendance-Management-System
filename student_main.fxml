@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="attendance.controller.StudentMainController"
+            stylesheets="@../style/student_main.css">
+
+    <top>
+        <HBox styleClass="top-nav-bar" spacing="10">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            
+            <Button onAction="#toggleSidebar" styleClass="menu-button">
+                <graphic>
+                    <Label text="☰" styleClass="menu-icon"/>
+                </graphic>
+            </Button>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <Label text="Student Portal - Attendance Management System" styleClass="app-title"/>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <!-- Notification Bell for Student -->
+            <Button fx:id="notificationBell" onAction="#showNotifications" styleClass="notification-bell-button">
+                <graphic>
+                    <HBox spacing="5" alignment="CENTER">
+                        <Label text="🔔" styleClass="bell-icon"/>
+                        <Label fx:id="unreadCountLabel" text="0" styleClass="unread-count"/>
+                    </HBox>
+                </graphic>
+            </Button>
+            
+            <Button onAction="#logout" text="Logout" styleClass="logout-button"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox fx:id="sidebar" styleClass="sidebar" spacing="10">
+            <padding><Insets top="20" right="15" bottom="20" left="15"/></padding>
+            
+            <Button onAction="#loadHome" text="Dashboard" styleClass="sidebar-button"/>
+            <Button onAction="#showViewAttendance" text="View Attendance" styleClass="sidebar-button"/>
+            
+            <!-- NO MESSAGES BUTTON HERE -->
+            
+            <Region VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area"/>
+    </center>
+
+</BorderPane>

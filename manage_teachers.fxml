@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="attendance.controller.ManageTeachersController"
+      spacing="15" 
+      style="-fx-padding: 20;">
+    
+    <!-- Header -->
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Label text="👨‍🏫 Teacher Management" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        
+        <!-- Search Box -->
+        <HBox spacing="5" alignment="CENTER_RIGHT">
+            <TextField fx:id="searchField" promptText="Search teachers..." 
+                       style="-fx-pref-width: 200px;"/>
+            <Button text="🔍" onAction="#handleSearch"/>
+        </HBox>
+    </HBox>
+    
+    <!-- Toolbar -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="➕ Add New Teacher" fx:id="addTeacherBtn" 
+                style="-fx-background-color: #2196F3; -fx-text-fill: white;"
+                onAction="#handleAddTeacher"/>
+        <Button text="✏️ Edit Selected" fx:id="editBtn" onAction="#handleEditTeacher"/>
+        <Button text="🗑️ Delete Selected" fx:id="deleteBtn" 
+                style="-fx-background-color: #dc3545; -fx-text-fill: white;" 
+                onAction="#handleDeleteTeacher"/>
+        <Button text="🔄 Refresh" onAction="#handleRefresh"/>
+    </HBox>
+    
+    <!-- Teachers Table -->
+    <TableView fx:id="teachersTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn" prefWidth="60"/>
+            <TableColumn text="First Name" fx:id="firstNameColumn" prefWidth="120"/>
+            <TableColumn text="Last Name" fx:id="lastNameColumn" prefWidth="120"/>
+            <TableColumn text="Email" fx:id="emailColumn" prefWidth="200"/>
+            <TableColumn text="Department" fx:id="departmentColumn" prefWidth="150"/>
+            <TableColumn text="Classes Assigned" fx:id="classesCountColumn" prefWidth="120"/>
+        </columns>
+    </TableView>
+    
+    <!-- Statistics -->
+    <HBox spacing="20">
+        <Label fx:id="statsLabel" style="-fx-font-size: 14px; -fx-text-fill: #666;"/>
+    </HBox>
+    
+</VBox>

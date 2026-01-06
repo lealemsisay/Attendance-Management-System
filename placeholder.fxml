@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="attendance.controller.PlaceholderController"
+      spacing="15"
+      styleClass="placeholder-container">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label fx:id="titleLabel" styleClass="placeholder-title"/>
+    <Label text="This section is under construction." styleClass="placeholder-subtitle"/>
+
+</VBox>

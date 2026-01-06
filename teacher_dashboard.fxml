@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="attendance.controller.TeacherDashboardController"
+            stylesheets="@/attendance/style/dashboard.css">
+
+    <top>
+        <HBox styleClass="top-nav-bar" spacing="10">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            
+            <Label text="Teacher Portal - Attendance Management System" styleClass="app-title"/>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <Label fx:id="welcomeLabel" styleClass="welcome-text"/>
+            
+<Button text="Logout" styleClass="logout-button" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="25" alignment="CENTER" styleClass="dashboard-content">
+            <Text text="Teacher Dashboard" styleClass="dashboard-title"/>
+            
+            <VBox spacing="15" alignment="CENTER">
+                <Button text="Take Attendance" onAction="#handleTakeAttendance" styleClass="primary-button"/>
+                <Button text="View Attendance" onAction="#handleViewAttendance" styleClass="primary-button"/>
+                <Button text="Assigned Classes" onAction="#handleAssignedClasses" styleClass="primary-button"/>
+                <Button text="Student Records" onAction="#handleStudentRecords" styleClass="primary-button"/>
+                <Button text="Generate Reports" onAction="#handleGenerateReports" styleClass="primary-button"/>
+            </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>

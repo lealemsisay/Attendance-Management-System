@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="attendance.controller.ManageClassesController"
+      styleClass="manage-classes-root"
+      spacing="20"
+      style="-fx-padding: 20;">
+    
+    <!-- Header with Title and Toolbar -->
+    <HBox spacing="20" alignment="CENTER_LEFT">
+        <VBox spacing="4">
+            <Label text="Manage Classes" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Label text="Add, edit, and manage class information" 
+                   style="-fx-font-size: 14px; -fx-text-fill: #666;"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        
+        <!-- Toolbar with Actions -->
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <!-- Refresh Button -->
+            <Button fx:id="refreshButton" text="🔄 Refresh" onAction="#handleRefresh"
+                    style="-fx-background-color: #6c757d; -fx-text-fill: white;" prefWidth="100"/>
+            
+            <!-- Actions Menu Button -->
+            <MenuButton fx:id="actionsMenuButton" text="⚙️ Actions" 
+                       style="-fx-background-color: #0d6efd; -fx-text-fill: white;" prefWidth="120">
+                <items>
+                    <MenuItem fx:id="addClassMenuItem" text="➕ Add New Class" onAction="#handleAddClass" />
+                    <MenuItem fx:id="editClassMenuItem" text="✏️ Edit Selected Class" onAction="#handleEditClass" 
+                              disable="true"/>
+                    <MenuItem fx:id="updateClassMenuItem" text="💾 Update Class" onAction="#handleUpdateClass" 
+                              disable="true"/>
+                    <MenuItem fx:id="deleteClassMenuItem" text="🗑️ Delete Selected Class" onAction="#handleDeleteClass" 
+                              disable="true"/>
+                    <SeparatorMenuItem />
+                    <MenuItem fx:id="clearFormMenuItem" text="🧹 Clear Form" onAction="#handleClearForm" />
+                    <MenuItem fx:id="exportDataMenuItem" text="📤 Export Data" onAction="#handleExportData" />
+                    <MenuItem fx:id="importDataMenuItem" text="📥 Import Data" onAction="#handleImportData" />
+                </items>
+            </MenuButton>
+            
+            <!-- Back Button -->
+            <Button fx:id="backButton" text="← Back to Dashboard" onAction="#handleBack"
+                    style="-fx-background-color: #6c757d; -fx-text-fill: white;" prefWidth="150"/>
+        </HBox>
+    </HBox>
+    
+    <!-- Add/Edit Class Form -->
+    <VBox spacing="16" style="-fx-padding: 20; -fx-background-color: #f5f5f5; -fx-background-radius: 8;">
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Class Information" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="formStatusLabel" text="Ready" 
+                   style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+        </HBox>
+        
+        <GridPane hgap="16" vgap="12">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="25"/>
+                <ColumnConstraints percentWidth="25"/>
+                <ColumnConstraints percentWidth="25"/>
+                <ColumnConstraints percentWidth="25"/>
+            </columnConstraints>
+            
+            <!-- Row 1: Labels -->
+            <Label text="Class Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" 
+                   style="-fx-font-weight: bold;"/>
+            <Label text="Room Number:" GridPane.columnIndex="1" GridPane.rowIndex="0" 
+                   style="-fx-font-weight: bold;"/>
+            <Label text="Schedule:" GridPane.columnIndex="2" GridPane.rowIndex="0" 
+                   style="-fx-font-weight: bold;"/>
+            <Label text="Teacher:" GridPane.columnIndex="3" GridPane.rowIndex="0" 
+                   style="-fx-font-weight: bold;"/>
+            
+            <!-- Row 2: Inputs -->
+            <TextField fx:id="classNameField" promptText="Enter class name" 
+                      GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="roomField" promptText="e.g., Room 101" 
+                      GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <TextField fx:id="scheduleField" promptText="e.g., Mon-Wed-Fri 9:00-10:30" 
+                      GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <ComboBox fx:id="teacherComboBox" promptText="Select teacher" 
+                     GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+            
+            <!-- Row 3: Quick Actions -->
+            <HBox spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="2">
+                <Button fx:id="quickAddButton" text="➕ Quick Add" 
+                       onAction="#handleAddClass" style="-fx-background-color: #2196F3; -fx-text-fill: white;" prefWidth="100"/>
+                <Button fx:id="quickUpdateButton" text="💾 Quick Update" 
+                       onAction="#handleUpdateClass" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" prefWidth="100"/>
+                <Button fx:id="quickClearButton" text="🧹 Clear" 
+                       onAction="#handleClearForm" style="-fx-background-color: #9E9E9E; -fx-text-fill: white;" prefWidth="80"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="selectedClassLabel" text="No class selected" 
+                       style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+            </HBox>
+        </GridPane>
+    </VBox>
+    
+    <!-- Classes Table with Status Bar -->
+    <VBox spacing="12" VBox.vgrow="ALWAYS">
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="All Classes" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="tableStatusLabel" text="Total: 0 classes" 
+                   style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+        </HBox>
+        
+        <TableView fx:id="classesTable">
+            <columns>
+                <TableColumn fx:id="classNameColumn" text="Class Name" prefWidth="150"/>
+                <TableColumn fx:id="roomColumn" text="Room" prefWidth="100"/>
+                <TableColumn fx:id="scheduleColumn" text="Schedule" prefWidth="200"/>
+                <TableColumn fx:id="teacherColumn" text="Teacher" prefWidth="150"/>
+                <TableColumn fx:id="studentCountColumn" text="Students" prefWidth="80"/>
+            </columns>
+        </TableView>
+        
+        <!-- Status Bar -->
+        <HBox spacing="10" style="-fx-padding: 10 0 0 0;">
+            <Label fx:id="statusLabel" text="Ready" 
+                   style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="exportButton" text="📤 Export Table" onAction="#handleExportTable"
+                    style="-fx-background-color: #9E9E9E; -fx-text-fill: white;" prefWidth="120"/>
+        </HBox>
+    </VBox>
+</VBox>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="attendance.controller.StudentDashboardController"
+            prefWidth="900" prefHeight="700"
+            stylesheets="@../style/student_dashboard.css">
+
+    <top>
+        <VBox spacing="10" styleClass="header">
+            <Label text="Student Portal - Attendance Management System" styleClass="header-title"/>
+            <Label fx:id="welcomeLabel" styleClass="welcome-text"/>
+            <Separator/>
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="mainTabPane">
+            <tabs>
+                <Tab text="Dashboard">
+                    <VBox spacing="20" alignment="CENTER" styleClass="dashboard-content">
+                        <Text text="Student Dashboard" styleClass="dashboard-title"/>
+                        
+                        <HBox spacing="30" alignment="CENTER">
+                            <VBox spacing="15" alignment="CENTER" styleClass="info-card">
+                                <Label text="Attendance Summary" styleClass="card-title"/>
+                                <Label fx:id="totalClassesLabel" text="Total Classes: 0" styleClass="card-value"/>
+                                <Label fx:id="presentCountLabel" text="Present: 0" styleClass="card-value"/>
+                                <Label fx:id="attendancePercentageLabel" text="Percentage: 0%" styleClass="card-percentage"/>
+                            </VBox>
+                            
+                            <VBox spacing="15" alignment="CENTER" styleClass="info-card">
+                                <Label text="Messages" styleClass="card-title"/>
+                                <Label fx:id="unreadMessagesLabel" text="Unread: 0" styleClass="card-value"/>
+                                <Label fx:id="totalMessagesLabel" text="Total: 0" styleClass="card-value"/>
+                                <Button text="View Messages" onAction="#handleViewMessages" styleClass="action-button"/>
+                            </VBox>
+                        </HBox>
+                        
+                        <VBox spacing="10" alignment="CENTER">
+                            <Button text="View Attendance Records" onAction="#handleViewAttendance" styleClass="primary-button"/>
+                            <Button text="Compose Message" onAction="#handleComposeMessage" styleClass="primary-button"/>
+                            <Button text="Logout" onAction="#handleLogout" styleClass="logout-button"/>
+                        </VBox>
+                    </VBox>
+                </Tab>
+                
+                <Tab text="Attendance Records">
+                    <VBox spacing="15" styleClass="tab-content">
+                        <Label text="My Attendance History" styleClass="section-title"/>
+                        <TableView fx:id="attendanceTable" styleClass="attendance-table">
+                            <columns>
+                                <TableColumn text="Date" prefWidth="150"/>
+                                <TableColumn text="Status" prefWidth="100"/>
+                                <TableColumn text="Check In" prefWidth="150"/>
+                                <TableColumn text="Check Out" prefWidth="150"/>
+                                <TableColumn text="Remarks" prefWidth="200"/>
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </Tab>
+                
+                <Tab text="Messages">
+                    <VBox spacing="15" styleClass="tab-content">
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Label text="My Messages" styleClass="section-title"/>
+                            <Button text="Compose New" onAction="#handleComposeMessage" styleClass="primary-button"/>
+                        </HBox>
+                        
+                        <TableView fx:id="messagesTable" styleClass="messages-table">
+                            <columns>
+                                <TableColumn text="From" prefWidth="150"/>
+                                <TableColumn text="Subject" prefWidth="200"/>
+                                <TableColumn text="Date" prefWidth="150"/>
+                                <TableColumn text="Read" prefWidth="80"/>
+                            </columns>
+                        </TableView>
+                        
+                        <VBox fx:id="messageDetailBox" spacing="10" styleClass="message-detail" visible="false">
+                            <Label text="Message Details" styleClass="section-title"/>
+                            <Label fx:id="messageSubjectLabel" styleClass="message-subject"/>
+                            <Label fx:id="messageFromLabel" styleClass="message-info"/>
+                            <Label fx:id="messageDateLabel" styleClass="message-info"/>
+                            <TextArea fx:id="messageContentArea" editable="false" styleClass="message-content"/>
+                            <Button text="Reply" onAction="#handleReply" styleClass="primary-button"/>
+                        </VBox>
+                    </VBox>
+                </Tab>
+                
+                <Tab text="Compose Message">
+                    <VBox spacing="15" styleClass="tab-content">
+                        <Label text="Compose New Message" styleClass="section-title"/>
+                        
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Label text="To:" styleClass="form-label"/>
+                            <ComboBox fx:id="recipientComboBox" prefWidth="300"/>
+                        </HBox>
+                        
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Label text="Subject:" styleClass="form-label"/>
+                            <TextField fx:id="subjectField" prefWidth="400"/>
+                        </HBox>
+                        
+                        <Label text="Message:" styleClass="form-label"/>
+                        <TextArea fx:id="messageTextArea" prefRowCount="8" styleClass="message-textarea"/>
+                        
+                        <HBox spacing="10">
+                            <Button text="Send Message" onAction="#handleSendMessage" styleClass="primary-button"/>
+                            <Button text="Clear" onAction="#handleClearMessage" styleClass="secondary-button"/>
+                        </HBox>
+                    </VBox>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

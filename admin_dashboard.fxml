@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="attendance.controller.DashboardController"
+      styleClass="dashboard-root"
+      spacing="24"
+      stylesheets="@/attendance/style/dashboard.css">
+    
+    <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+    
+    <!-- Header -->
+    <VBox styleClass="dashboard-header">
+        <Label fx:id="welcomeLabel" text="Welcome back, Admin!" 
+               styleClass="welcome-title"/>
+        <Label text="Here's what's happening with your system today." 
+               styleClass="welcome-subtitle"/>
+    </VBox>
+    
+    <!-- Stats Grid -->
+    <GridPane hgap="24" vgap="24" styleClass="stats-grid">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50"/>
+            <ColumnConstraints percentWidth="50"/>
+        </columnConstraints>
+        
+        <!-- Total Students Card -->
+        <VBox styleClass="stat-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <HBox spacing="12" alignment="CENTER_LEFT" styleClass="stat-card-content">
+                <Label text="👨‍🎓" styleClass="stat-icon students-icon"/>
+                <VBox spacing="4" styleClass="stat-card-text">
+                    <Label text="Total Students" styleClass="stat-card-title"/>
+                    <Label fx:id="totalStudentsLabel" text="0" styleClass="stat-card-value"/>
+                </VBox>
+            </HBox>
+        </VBox>
+        
+        <!-- Attendance Today Card -->
+        <VBox styleClass="stat-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <HBox spacing="12" alignment="CENTER_LEFT" styleClass="stat-card-content">
+                <Label text="📊" styleClass="stat-icon attendance-icon"/>
+                <VBox spacing="4" styleClass="stat-card-text">
+                    <Label text="Today's Attendance" styleClass="stat-card-title"/>
+                    <HBox alignment="CENTER_LEFT" spacing="8" styleClass="attendance-percentage">
+                        <Label fx:id="attendanceTodayLabel" text="0%" styleClass="attendance-value"/>
+                        <Label text="↑ 0.0%" styleClass="attendance-trend"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </GridPane>
+    
+    <!-- Two Column Layout -->
+    <HBox spacing="24" VBox.vgrow="ALWAYS" styleClass="two-column-layout">
+   
+        <!-- Right Column: Recent Activity -->
+        <VBox spacing="16" HBox.hgrow="ALWAYS" styleClass="recent-activity">
+            <HBox styleClass="recent-activity-header">
+                <Label text="Recent Activity" styleClass="recent-activity-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="View All" onAction="#handleRecentActivity" 
+                        styleClass="view-all-button"/>
+            </HBox>
+            
+            <VBox spacing="12" styleClass="activity-list">
+                <!-- Activity Item 1 -->
+                <HBox spacing="12" alignment="CENTER_LEFT" styleClass="activity-item">
+                    <Label text="📝" styleClass="activity-icon"/>
+                    <VBox spacing="2" styleClass="activity-text">
+                        <Label text="New student registered" styleClass="activity-description"/>
+                        <Label text="Just now • John Doe (STU001)" styleClass="activity-time"/>
+                    </VBox>
+                </HBox>
+                
+                <!-- Activity Item 2 -->
+                <HBox spacing="12" alignment="CENTER_LEFT" styleClass="activity-item">
+                    <Label text="✅" styleClass="activity-icon"/>
+                    <VBox spacing="2" styleClass="activity-text">
+                        <Label text="Attendance marked for Class 10A" styleClass="activity-description"/>
+                        <Label text="5 minutes ago • 25/30 students present" styleClass="activity-time"/>
+                    </VBox>
+                </HBox>
+                
+                <!-- Activity Item 3 -->
+                <HBox spacing="12" alignment="CENTER_LEFT" styleClass="activity-item">
+                    <Label text="🔔" styleClass="activity-icon"/>
+                    <VBox spacing="2" styleClass="activity-text">
+                        <Label text="Notification sent to all teachers" styleClass="activity-description"/>
+                        <Label text="1 hour ago • Staff meeting reminder" styleClass="activity-time"/>
+                    </VBox>
+                </HBox>
+                
+                <!-- Activity Item 4 -->
+                <HBox spacing="12" alignment="CENTER_LEFT" styleClass="activity-item">
+                    <Label text="📊" styleClass="activity-icon"/>
+                    <VBox spacing="2" styleClass="activity-text">
+                        <Label text="Monthly report generated" styleClass="activity-description"/>
+                        <Label text="3 hours ago • December 2024" styleClass="activity-time"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </VBox>
+    </HBox>
+</VBox>

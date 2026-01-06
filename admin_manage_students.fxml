@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="attendance.controller.AdminManageStudentsController"
+      style="-fx-background-color: #f3f4f6;"
+      spacing="15">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <!-- Header -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Manage Students" 
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1f2937;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="statusLabel" 
+               style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+    </HBox>
+    
+    <Separator style="-fx-background-color: #e5e7eb; -fx-pref-height: 1px;"/>
+    
+    <!-- Main Toolbar -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField" promptText="Search by name, ID, email, department, class..." 
+                   style="-fx-padding: 8px 12px; 
+                          -fx-background-color: white; 
+                          -fx-border-color: #d1d5db; 
+                          -fx-border-radius: 6px; 
+                          -fx-min-width: 400px;" 
+                   onAction="#handleSearch"/>
+        <Button fx:id="refreshButton" text="🔄 Refresh" onAction="#handleRefresh"
+                style="-fx-background-color: #6b7280; 
+                       -fx-text-fill: white; 
+                       -fx-font-weight: bold; 
+                       -fx-padding: 8px 16px; 
+                       -fx-background-radius: 6px; 
+                       -fx-cursor: hand;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        
+        <!-- Manage Students Menu -->
+        <MenuButton fx:id="manageMenuButton" text="Manage Students" 
+                    style="-fx-background-color: #8b5cf6; 
+                           -fx-text-fill: white; 
+                           -fx-font-weight: bold; 
+                           -fx-padding: 8px 16px; 
+                           -fx-background-radius: 6px; 
+                           -fx-cursor: hand;">
+            <items>
+                <MenuItem fx:id="addMenuItem" text="➕Add Student" onAction="#handleAddStudent" />
+                <MenuItem fx:id="editMenuItem" text="✏️Edit Student" onAction="#handleEditStudent" 
+                          disable="true"/>
+                <MenuItem fx:id="deleteMenuItem" text="🗑️Delete Student" onAction="#handleDeleteStudent" 
+                          disable="true"/>
+                <MenuItem fx:id="deleteSelectedMenuItem" text="🗑️Delete Selected" onAction="#handleDeleteSelectedStudents" 
+                          disable="true"/>
+                <SeparatorMenuItem />
+                <MenuItem fx:id="resetPasswordMenuItem" text="🔑Reset Password" onAction="#handleResetPassword" 
+                          disable="true"/>
+                <MenuItem fx:id="resetUsernamePasswordMenuItem" text="👤 Reset Username &amp; Password" onAction="#handleResetUsernamePassword" 
+                          disable="true"/>
+                <MenuItem fx:id="resetMenuItem" text="🔄Reset Database" onAction="#handleResetDatabase" />
+                <MenuItem fx:id="forceDeleteMenuItem" text="⚠️Force Delete" onAction="#handleForceDelete" 
+                          disable="true"/>
+                <MenuItem text="⚠️ Force Delete Selected" onAction="#handleForceDeleteSelected" 
+                          disable="true"/>
+                <SeparatorMenuItem />
+                <MenuItem fx:id="fixDatabaseMenuItem" text="🔧 Fix Database Schema" onAction="#handleFixDatabase" />
+                <MenuItem fx:id="fixUserAccountsMenuItem" text="👤 Fix User Accounts" onAction="#handleFixUserAccounts" />
+                <MenuItem fx:id="generateReportMenuItem" text="📊 Generate Report" onAction="#handleGenerateReport" />
+                <SeparatorMenuItem />
+                <MenuItem text="📋Select All" onAction="#handleSelectAll" 
+                          accelerator="Shortcut+A"/>
+                <MenuItem text="⌨️Keyboard Shortcuts" 
+                          onAction="#handleKeyboardShortcutsHelp"/>
+            </items>
+        </MenuButton>
+        
+        <Button fx:id="backToDashboardButton" text="← Back to Dashboard" onAction="#handleBackToDashboard"
+                style="-fx-background-color: #6b7280; 
+                       -fx-text-fill: white; 
+                       -fx-font-weight: bold; 
+                       -fx-padding: 8px 16px; 
+                       -fx-background-radius: 6px; 
+                       -fx-cursor: hand;"/>
+    </HBox>
+    
+    <!-- Students Table -->
+    <TableView fx:id="studentsTable" prefHeight="400" 
+               style="-fx-background-color: white; 
+                      -fx-border-color: #e5e7eb; 
+                      -fx-border-radius: 8px;
+                      -fx-border-width: 1px;">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+        
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50">
+                <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="studentIdColumn" text="Student ID" prefWidth="100">
+                <cellValueFactory><PropertyValueFactory property="studentId"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="firstNameColumn" text="First Name" prefWidth="120">
+                <cellValueFactory><PropertyValueFactory property="firstName"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="middleNameColumn" text="Middle Name" prefWidth="120">
+                <cellValueFactory><PropertyValueFactory property="middleName"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="lastNameColumn" text="Last Name" prefWidth="120">
+                <cellValueFactory><PropertyValueFactory property="lastName"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="200">
+                <cellValueFactory><PropertyValueFactory property="email"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="departmentColumn" text="Department" prefWidth="150">
+                <cellValueFactory><PropertyValueFactory property="department"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="classNameColumn" text="Class" prefWidth="100">
+                <cellValueFactory><PropertyValueFactory property="className"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="userIdColumn" text="User ID" prefWidth="80">
+                <cellValueFactory><PropertyValueFactory property="userId"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</VBox>

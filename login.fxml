@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="attendance.controller.LoginController"
+            stylesheets="@../style/login.css">
+
+    <VBox spacing="20" alignment="CENTER" AnchorPane.topAnchor="100" AnchorPane.bottomAnchor="100" 
+          AnchorPane.leftAnchor="200" AnchorPane.rightAnchor="200">
+        
+        <Text text="Attendance Management System" styleClass="title-text"/>
+        
+        <VBox spacing="10" styleClass="login-form">
+            <Label text="Username"/>
+            <TextField fx:id="usernameField" promptText="Enter username"/>
+            
+            <Label text="Password"/>
+            <PasswordField fx:id="passwordField" promptText="Enter password"/>
+            
+            <Button text="Login" onAction="#handleLogin" styleClass="login-button" 
+                    defaultButton="true"/>
+            
+            <Label fx:id="errorLabel" styleClass="error-label" visible="false"/>
+        </VBox>
+    </VBox>
+
+</AnchorPane>
