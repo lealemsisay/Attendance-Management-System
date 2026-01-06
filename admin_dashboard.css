@@ -1,0 +1,192 @@
+/* ================== DASHBOARD STYLES ================== */
+
+.dashboard-root {
+    -fx-background-color: #f3f4f6;
+}
+
+.dashboard-header {
+    -fx-spacing: 8;
+}
+
+.welcome-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.subtitle-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+/* ================== STATS GRID ================== */
+
+.stats-grid {
+    -fx-hgap: 24;
+    -fx-vgap: 24;
+}
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 24px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+.stat-icon {
+    -fx-font-size: 24px;
+    -fx-padding: 12px;
+    -fx-background-radius: 12px;
+    -fx-min-width: 48px;
+    -fx-min-height: 48px;
+    -fx-pref-width: 48px;
+    -fx-pref-height: 48px;
+    -fx-max-width: 48px;
+    -fx-max-height: 48px;
+    -fx-alignment: center;
+}
+
+.students-icon {
+    -fx-background-color: #dbeafe;
+    -fx-text-fill: #1e40af;
+}
+
+.attendance-icon {
+    -fx-background-color: #f3e8ff;
+    -fx-text-fill: #6b21a8;
+}
+
+.stat-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+.stat-value {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.attendance-percentage {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #10b981;
+}
+
+.attendance-change {
+    -fx-text-fill: #27ae60;
+    -fx-font-size: 12px;
+}
+
+/* ================== DASHBOARD COLUMNS ================== */
+
+.dashboard-columns {
+    -fx-spacing: 24;
+}
+
+/* ================== QUICK ACTIONS PANEL ================== */
+
+.quick-actions-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 24px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-pref-width: 350px;
+    -fx-max-width: 350px;
+}
+
+.quick-actions-buttons {
+    -fx-spacing: 12;
+}
+
+/* ================== RECENT ACTIVITY PANEL ================== */
+
+.recent-activity-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 24px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+.panel-header {
+    -fx-alignment: center-left;
+}
+
+.panel-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.activity-list {
+    -fx-spacing: 12;
+}
+
+.activity-item {
+    -fx-alignment: center-left;
+    -fx-spacing: 12;
+}
+
+.activity-icon {
+    -fx-font-size: 16px;
+    -fx-min-width: 24px;
+    -fx-pref-width: 24px;
+}
+
+.activity-description {
+    -fx-font-size: 14px;
+    -fx-text-fill: #374151;
+}
+
+.activity-time {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7280;
+}
+
+/* ================== BUTTON STYLES ================== */
+
+.secondary-button {
+    -fx-background-color: #f3f4f6;
+    -fx-text-fill: #374151;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-alignment: center-left;
+    -fx-content-display: left;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #e5e7eb;
+}
+
+.secondary-button:pressed {
+    -fx-background-color: #d1d5db;
+}
+
+.text-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3b82f6;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+    -fx-font-size: 14px;
+}
+
+.text-button:hover {
+    -fx-text-fill: #1d4ed8;
+    -fx-underline: true;
+}
+
+/* ================== HOVER EFFECTS ================== */
+
+.stat-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 12, 0, 0, 2);
+    -fx-translate-y: -2;
+}
+
+.secondary-button:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+    -fx-translate-y: -1;
+}

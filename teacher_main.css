@@ -1,0 +1,118 @@
+/* ================== MAIN LAYOUT ================== */
+.root {
+    -fx-background-color: #f8fafc;
+}
+
+/* ================== TOP NAV BAR ================== */
+.top-nav-bar {
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 10px 20px;
+    -fx-alignment: center;
+}
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 5px;
+}
+
+.menu-icon {
+    -fx-font-size: 20px;
+    -fx-text-fill: #4b5563;
+}
+
+.app-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.app-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7280;
+}
+
+.user-icon {
+    -fx-font-size: 20px;
+    -fx-text-fill: #4f46e5;
+}
+
+.user-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.user-role {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7280;
+}
+
+.logout-button {
+    -fx-background-color: #f3f4f6;
+    -fx-text-fill: #4b5563;
+    -fx-font-weight: bold;
+    -fx-padding: 6px 12px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.logout-button:hover {
+    -fx-background-color: #e5e7eb;
+}
+
+/* ================== SIDEBAR ================== */
+.sidebar {
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 0 1px 0 0;
+    -fx-padding: 20px 15px;
+    -fx-spacing: 5px;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #374151;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-padding: 10px 12px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-alignment: center-left;
+    -fx-content-display: left;
+    -fx-graphic-text-gap: 10px;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #f3f4f6;
+}
+
+.sidebar-button:selected {
+    -fx-background-color: #e0e7ff;
+    -fx-text-fill: #3730a3;
+    -fx-font-weight: bold;
+}
+
+.sidebar-separator {
+    -fx-padding: 10px 0;
+}
+
+.sidebar-footer {
+    -fx-padding: 10px 0 0 0;
+}
+
+.help-title {
+    -fx-font-size: 12px;
+    -fx-text-fill: #9ca3af;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 5px 10px;
+}
+
+/* ================== CONTENT AREA ================== */
+.content-area {
+    -fx-background-color: #f8fafc;
+}

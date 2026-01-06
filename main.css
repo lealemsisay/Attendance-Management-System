@@ -1,0 +1,182 @@
+/* Main Layout */
+.main-root {
+    -fx-background-color: #f5f5f5;
+}
+
+.top-nav-bar {
+    -fx-background-color: #1976d2;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+.app-title {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.menu-toggle-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-padding: 8px;
+    -fx-cursor: hand;
+}
+
+.user-menu-btn {
+    -fx-background-color: rgba(255,255,255,0.2);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 0);
+}
+
+.user-profile-section {
+    -fx-padding: 0 0 16px 0;
+}
+
+.user-avatar-container {
+    -fx-background-color: #e3f2fd;
+    -fx-background-radius: 50%;
+    -fx-padding: 8px;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+}
+
+.user-avatar {
+    -fx-font-size: 20px;
+}
+
+.user-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.user-role {
+    -fx-font-size: 12px;
+    -fx-text-fill: #666;
+}
+
+.sidebar-separator {
+    -fx-padding: 16px 0;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    -fx-padding: 0;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #333;
+    -fx-alignment: center-left;
+    -fx-padding: 0 12px;
+    -fx-cursor: hand;
+}
+
+.nav-button:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+.nav-button.active {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: white;
+}
+
+.nav-button.active .nav-text,
+.nav-button.active .nav-icon {
+    -fx-text-fill: white;
+}
+
+.nav-icon {
+    -fx-font-size: 16px;
+    -fx-min-width: 20px;
+    -fx-alignment: center;
+}
+
+.nav-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+}
+
+/* Content Area */
+.content-area {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 0;
+}
+
+/* Form Styles */
+.form-container {
+    -fx-background-color: white;
+    -fx-padding: 20px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0, 0, 2);
+}
+
+.form-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.primary-button {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #1565c0;
+}
+
+.secondary-button {
+    -fx-background-color: #f5f5f5;
+    -fx-text-fill: #333;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+/* Table Styles */
+.classes-table {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0, 0, 2);
+}
+
+.classes-table .column-header {
+    -fx-background-color: #f5f5f5;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.small-button {
+    -fx-font-size: 12px;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 3px;
+}
+
+.small-button.delete {
+    -fx-background-color: #ff4444;
+    -fx-text-fill: white;
+}
+
+.small-button.delete:hover {
+    -fx-background-color: #cc0000;
+}

@@ -1,0 +1,858 @@
+/* student_dashboard.css */
+/* ================== COMMON FORM STYLES ================== */
+.form-container {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 24px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 8, 0, 0, 0);
+}
+
+.form-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+}
+
+.form-textfield {
+    -fx-background-color: white;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 6px;
+    -fx-padding: 8px 12px;
+    -fx-font-size: 14px;
+}
+
+.form-textfield:focused {
+    -fx-border-color: #3b82f6;
+    -fx-border-width: 2px;
+}
+
+/* ================== TABLE STYLES ================== */
+.data-table {
+    -fx-background-color: white;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+}
+
+.table-header {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+    -fx-background-color: #f0f9ff;
+}
+
+.table-cell {
+    -fx-font-size: 14px;
+    -fx-text-fill: #374151;
+    -fx-padding: 10px;
+}
+
+/* ================== BUTTON STYLES ================== */
+.primary-button {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.primary-button:hover {
+    -fx-background-color: #2563eb;
+}
+
+.secondary-button {
+    -fx-background-color: #f0f9ff;
+    -fx-text-fill: #0369a1;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #e0f2fe;
+}
+
+.danger-button {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.danger-button:hover {
+    -fx-background-color: #dc2626;
+}
+
+/* ================== CARD STYLES ================== */
+.info-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 8, 0, 0, 0);
+}
+
+.card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.card-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+/* ================== STATUS INDICATORS ================== */
+.status-present {
+    -fx-background-color: #d1fae5;
+    -fx-text-fill: #065f46;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.status-absent {
+    -fx-background-color: #fee2e2;
+    -fx-text-fill: #991b1b;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.status-late {
+    -fx-background-color: #fef3c7;
+    -fx-text-fill: #92400e;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.status-excused {
+    -fx-background-color: #e0e7ff;
+    -fx-text-fill: #3730a3;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* ================== ALERT STYLES ================== */
+.alert-success {
+    -fx-background-color: #d1fae5;
+    -fx-text-fill: #065f46;
+    -fx-border-color: #a7f3d0;
+    -fx-border-radius: 8px;
+    -fx-padding: 12px;
+}
+
+.alert-error {
+    -fx-background-color: #fee2e2;
+    -fx-text-fill: #991b1b;
+    -fx-border-color: #fecaca;
+    -fx-border-radius: 8px;
+    -fx-padding: 12px;
+}
+
+.alert-warning {
+    -fx-background-color: #fef3c7;
+    -fx-text-fill: #92400e;
+    -fx-border-color: #fde68a;
+    -fx-border-radius: 8px;
+    -fx-padding: 12px;
+}
+
+.alert-info {
+    -fx-background-color: #e0f2fe;
+    -fx-text-fill: #0369a1;
+    -fx-border-color: #bae6fd;
+    -fx-border-radius: 8px;
+    -fx-padding: 12px;
+}
+
+/* ================== COMBO BOX STYLES ================== */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 6px;
+    -fx-padding: 0;
+    -fx-font-size: 14px;
+}
+
+.combo-box .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8px 12px;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: #f0f9ff;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 0 6px 6px 0;
+}
+
+.combo-box .list-cell {
+    -fx-padding: 8px 12px;
+    -fx-background-color: white;
+    -fx-text-fill: #374151;
+}
+
+.combo-box .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 6px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 8, 0, 0, 0);
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #f0f9ff;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+}
+
+/* ================== DATE PICKER STYLES ================== */
+.date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 6px;
+    -fx-padding: 0;
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8px 12px;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: #f0f9ff;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 0 6px 6px 0;
+}
+
+.date-picker-popup {
+    -fx-background-color: white;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 6px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 8, 0, 0, 0);
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: #f0f9ff;
+}
+
+.date-picker-popup .spinner {
+    -fx-background-color: white;
+}
+
+.date-picker-popup .day-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-text-fill: #374151;
+}
+
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: #f0f9ff;
+}
+
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+}
+
+.date-picker-popup .today {
+    -fx-background-color: #dbeafe;
+    -fx-border-color: #3b82f6;
+}
+
+/* ================== TABLE ENHANCEMENTS ================== */
+.data-table .column-header {
+    -fx-background-color: #f0f9ff;
+    -fx-border-color: #e5e7eb;
+    -fx-padding: 12px 15px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+}
+
+.data-table .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: #f1f5f9;
+}
+
+.data-table .table-row-cell:odd {
+    -fx-background-color: #f8fafc;
+}
+
+.data-table .table-row-cell:selected {
+    -fx-background-color: #dbeafe;
+}
+
+.data-table .table-row-cell:hover {
+    -fx-background-color: #f0f9ff;
+}
+
+.data-table .table-column {
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* ================== INFO TEXT ================== */
+.info-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748b;
+    -fx-font-style: italic;
+    -fx-padding: 20px;
+    -fx-alignment: center;
+}
+
+/* ================== CONTENT CONTAINER ================== */
+.content-container {
+    -fx-background-color: #f8fafc;
+    -fx-padding: 20px;
+}
+
+/* ================== SECTION TITLE ================== */
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.student-section-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e40af;
+    -fx-padding: 0 0 15px 0;
+}
+
+/* ================== ATTENDANCE STATS ================== */
+.attendance-stats {
+    -fx-spacing: 20px;
+    -fx-padding: 20px;
+}
+
+.stat-card-blue {
+    -fx-background-color: #dbeafe;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(59, 130, 246, 0.1), 8, 0, 0, 0);
+}
+
+.stat-card-green {
+    -fx-background-color: #d1fae5;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(16, 185, 129, 0.1), 8, 0, 0, 0);
+}
+
+.stat-card-orange {
+    -fx-background-color: #fef3c7;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(245, 158, 11, 0.1), 8, 0, 0, 0);
+}
+
+.stat-card-red {
+    -fx-background-color: #fee2e2;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(239, 68, 68, 0.1), 8, 0, 0, 0);
+}
+
+.stat-value {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.stat-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748b;
+}
+
+/* ================== STUDENT PROFILE ================== */
+.student-profile {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 8, 0, 0, 0);
+}
+
+.profile-header {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e40af;
+    -fx-padding: 0 0 15px 0;
+}
+
+.profile-detail {
+    -fx-font-size: 14px;
+    -fx-text-fill: #374151;
+    -fx-padding: 5px 0;
+}
+
+/* ================== GENERAL UTILITIES ================== */
+.table-row-cell:empty {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.combo-box:focused, .date-picker:focused {
+    -fx-border-color: #3b82f6;
+    -fx-border-width: 2px;
+}
+
+.highlight-row {
+    -fx-background-color: #f0f9ff;
+}
+
+.today-row {
+    -fx-background-color: #fffbeb;
+}
+
+
+/* Attendance statistics cards */
+.attendance-stats {
+    -fx-padding: 15px;
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 10px;
+    -fx-border-color: #e9ecef;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+}
+
+.stat-card-green {
+    -fx-background-color: #d4edda;
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;
+    -fx-border-color: #c3e6cb;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+}
+
+.stat-card-red {
+    -fx-background-color: #f8d7da;
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;
+    -fx-border-color: #f5c6cb;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+}
+
+.stat-card-blue {
+    -fx-background-color: #d1ecf1;
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;
+    -fx-border-color: #bee5eb;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+}
+
+.stat-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #212529;
+}
+
+.stat-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6c757d;
+}
+
+/* Student specific */
+.student-section-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.profile-detail {
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e;
+}
+
+/* Button styling */
+.primary-button {
+    -fx-background-color: #4a6fa5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #3a5a8a;
+}
+
+.secondary-button {
+    -fx-background-color: #6c757d;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #5a6268;
+}
+
+/* Table styling */
+.data-table {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 1px;
+}
+
+.data-table .table-row-cell {
+    -fx-background-color: white;
+    -fx-padding: 8px 0;
+    -fx-border-color: transparent;
+}
+
+.data-table .table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.data-table .table-row-cell:hover {
+    -fx-background-color: #f0f8ff;
+}
+
+.data-table .table-column {
+    -fx-alignment: center-left;
+}
+
+.data-table .column-header {
+    -fx-background-color: #4a6fa5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 10px;
+}
+
+.data-table .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+}
+
+/* Form controls */
+.form-container {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 15px;
+    -fx-background-radius: 8px;
+    -fx-border-color: #e9ecef;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+}
+
+.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-font-size: 13px;
+}
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4px;
+    -fx-padding: 5px;
+    -fx-font-size: 13px;
+}
+
+/* Card containers */
+.info-card {
+    -fx-background-color: #e7f3ff;
+    -fx-padding: 15px;
+    -fx-background-radius: 8px;
+    -fx-border-color: #cfe2ff;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+}
+
+/* Text styling */
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+.card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.card-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* Container styling */
+.content-container {
+    -fx-background-color: #f5f7fa;
+}
+
+/* student_dashboard.css */
+
+.root {
+    -fx-background-color: #f5f7fa;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.header {
+    -fx-padding: 20;
+    -fx-background-color: linear-gradient(to right, #2c3e50, #3498db);
+}
+
+.header-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.welcome-text {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.dashboard-content {
+    -fx-padding: 30;
+}
+
+.dashboard-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-fill: #2c3e50;
+}
+
+/* Info Cards */
+.info-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-min-width: 300;
+    -fx-min-height: 200;
+}
+
+.card-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 0 10 0;
+}
+
+.card-value {
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e;
+}
+
+.card-percentage {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3498db;
+}
+
+/* Charts Container */
+.charts-container {
+    -fx-spacing: 20;
+}
+
+.chart-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-pref-width: 350;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 8, 0, 0, 2);
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+.chart-card-full {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 8, 0, 0, 2);
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Pie Chart Styling */
+.pie-chart {
+    -fx-pref-height: 200;
+}
+
+.pie-chart .chart-pie {
+    -fx-border-color: white;
+    -fx-border-width: 1;
+}
+
+.pie-chart .chart-pie-label {
+    -fx-fill: #2c3e50;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* Data colors for pie chart */
+.default-color0.chart-pie { -fx-pie-color: #2ecc71; } /* Present - Green */
+.default-color1.chart-pie { -fx-pie-color: #e74c3c; } /* Absent - Red */
+
+/* Line Chart Styling */
+.line-chart {
+    -fx-pref-height: 200;
+}
+
+.line-chart .chart-series-line {
+    -fx-stroke-width: 2px;
+}
+
+.default-color0.chart-series-line { 
+    -fx-stroke: #3498db; 
+}
+
+.default-color0.chart-line-symbol { 
+    -fx-background-color: #3498db, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+
+/* Bar Chart Styling */
+.bar-chart {
+    -fx-pref-height: 250;
+}
+
+.default-color0.chart-bar {
+    -fx-bar-fill: linear-gradient(from 0% 0% to 0% 100%, #3498db, #2980b9);
+}
+
+.chart-bar:hover {
+    -fx-bar-fill: linear-gradient(from 0% 0% to 0% 100%, #2980b9, #1c5a7c);
+}
+
+.bar-chart .axis-label {
+    -fx-text-fill: #7f8c8d;
+}
+
+.bar-chart .axis-tick-mark {
+    -fx-stroke: #bdc3c7;
+}
+
+.bar-chart .axis-minor-tick-mark {
+    -fx-stroke: #ecf0f1;
+}
+
+/* Common Chart Styling */
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+.chart-legend-item {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 12px;
+}
+
+.chart-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.axis-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* Hint Box */
+.hint-box {
+    -fx-background-color: #e8f4fc;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-min-width: 600;
+}
+
+.hint-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.hint-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    -fx-background-color: rgba(44, 62, 80, 0.9);
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 5 10;
+    -fx-background-radius: 5;
+}
+
+/* Chart Grid Lines */
+.chart-vertical-grid-lines {
+    -fx-stroke: #ecf0f1;
+    -fx-stroke-dash-array: 2 4;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #ecf0f1;
+    -fx-stroke-dash-array: 2 4;
+}
+
+.refresh-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.refresh-button:hover {
+    -fx-background-color: #2980b9;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}

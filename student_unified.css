@@ -1,0 +1,136 @@
+/* Student Unified Dashboard Styles */
+
+/* Header */
+.header {
+    -fx-background-color: linear-gradient(to right, #2196F3, #21CBF3);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 3);
+}
+
+.app-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.welcome-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #2C3E50;
+    -fx-border-color: #34495E;
+    -fx-border-width: 0 1 0 0;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ECF0F1;
+    -fx-font-size: 14px;
+    -fx-padding: 12 15;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #34495E;
+}
+
+.sidebar-button:pressed {
+    -fx-background-color: #1ABC9C;
+}
+
+/* Profile Card */
+.profile-card {
+    -fx-background-color: #34495E;
+    -fx-padding: 15;
+    -fx-background-radius: 10;
+}
+
+.profile-info {
+    -fx-text-fill: #BDC3C7;
+    -fx-font-size: 12px;
+}
+
+/* Content Area */
+.content-area {
+    -fx-background-color: #ECF0F1;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+    -fx-background-color: #ECF0F1;
+}
+
+.dashboard-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+.stats-container {
+    -fx-alignment: center;
+}
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 3);
+    -fx-min-width: 150;
+    -fx-min-height: 120;
+}
+
+.stat-value {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+.stat-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7F8C8D;
+}
+
+/* Buttons */
+.notification-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.logout-button {
+    -fx-background-color: #E74C3C;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-background-radius: 5;
+}
+
+.logout-button:hover {
+    -fx-background-color: #C0392B;
+}
+
+.primary-button {
+    -fx-background-color: #3498DB;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 12 24;
+    -fx-background-radius: 8;
+}
+
+.primary-button:hover {
+    -fx-background-color: #2980B9;
+}
+
+/* Footer */
+.footer {
+    -fx-background-color: #2C3E50;
+}
+
+.footer-text {
+    -fx-text-fill: #95A5A6;
+    -fx-font-size: 12px;
+}

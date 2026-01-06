@@ -1,0 +1,188 @@
+/* ================== DASHBOARD CONTAINER ================== */
+.dashboard-container {
+    -fx-background-color: #f8fafc;
+    -fx-spacing: 20px;
+}
+
+/* ================== WELCOME SECTION ================== */
+.welcome-section {
+    -fx-spacing: 5px;
+    -fx-padding: 0 0 10px 0;
+}
+
+.welcome-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+.teacher-name {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.welcome-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+/* ================== STATS CONTAINER ================== */
+.stats-container {
+    -fx-spacing: 20px;
+}
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 8, 0, 0, 0);
+    -fx-pref-width: 250px;
+}
+
+.stat-icon {
+    -fx-font-size: 24px;
+    -fx-padding: 10px;
+    -fx-background-color: #f3f4f6;
+    -fx-background-radius: 10px;
+}
+
+.stat-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+.stat-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.stat-change {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7280;
+    -fx-padding: 5px 0 0 0;
+}
+
+/* ================== TWO COLUMN LAYOUT ================== */
+.two-column-layout {
+    -fx-spacing: 20px;
+}
+
+.schedule-container {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 8, 0, 0, 0);
+}
+
+.actions-container {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 8, 0, 0, 0);
+}
+
+/* ================== SCHEDULE ================== */
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.schedule-list {
+    -fx-spacing: 10px;
+}
+
+.schedule-item {
+    -fx-alignment: center-left;
+    -fx-spacing: 12px;
+    -fx-padding: 12px;
+    -fx-background-color: #f9fafb;
+    -fx-background-radius: 8px;
+}
+
+.schedule-time-icon {
+    -fx-font-size: 18px;
+    -fx-text-fill: #6b7280;
+}
+
+.schedule-class {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+}
+
+.schedule-details {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7280;
+}
+
+/* ================== ACTIONS ================== */
+.actions-list {
+    -fx-spacing: 10px;
+}
+
+.action-button {
+    -fx-background-color: #f3f4f6;
+    -fx-text-fill: #374151;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 16px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-alignment: center-left;
+    -fx-content-display: left;
+    -fx-graphic-text-gap: 10px;
+}
+
+.action-button:hover {
+    -fx-background-color: #e5e7eb;
+}
+
+/* ================== ACTIVITY ================== */
+.activity-container {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 8, 0, 0, 0);
+}
+
+.activity-list {
+    -fx-spacing: 10px;
+}
+
+.activity-item {
+    -fx-alignment: center-left;
+    -fx-spacing: 12px;
+    -fx-padding: 12px;
+    -fx-background-color: #f9fafb;
+    -fx-background-radius: 8px;
+}
+
+.activity-icon {
+    -fx-font-size: 18px;
+    -fx-text-fill: #6b7280;
+}
+
+.activity-description {
+    -fx-font-size: 14px;
+    -fx-text-fill: #374151;
+}
+
+.activity-time {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7280;
+}
+
+/* ================== BUTTONS ================== */
+.text-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4f46e5;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.text-button:hover {
+    -fx-underline: true;
+}
